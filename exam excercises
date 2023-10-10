@@ -1,0 +1,98 @@
+weight_kg = float(input("Enter your weight in kilograms: "))
+duration_minutes = int(input("Enter the duration of the activity in minutes: "))
+activity = input("Enter the type of activity (running, swimming, cycling): ").lower()
+
+if activity == "running":
+    calories_burned = 0.076 * weight_kg * duration_minutes
+elif activity == "swimming":
+    calories_burned = 0.068 * weight_kg * duration_minutes
+elif activity == "cycling":
+    calories_burned = 0.035 * weight_kg * duration_minutes
+else:
+    print("Invalid activity. Try again.")
+    calories_burned = None
+
+if calories_burned is not None:
+    print(f"You burned approximately {calories_burned} calories while {activity}.")
+
+
+("Enter the quantity:")
+quantity = int(input())
+print("Enter the unit of origin (miles, liters or fahrenheit):")
+origin = input()
+print("Enter the unit of destination (kilometers, gallons or celsius):")
+destination = input()
+print("Enter the price of the product:")
+ogprice = float(input())
+print("Enter the category (A, B, C):")
+category = input()
+print("Enter the number of units purchased:")
+units = float(input())
+
+if origin == "miles" and destination == "kilometers":
+  result = quantity * 1.609344
+if category == "A":
+  discount = .10
+
+elif origin == "liters" and destination == "gallons":
+  result = quantity * 0.264172
+elif category == "B":
+  discount = .05
+
+elif category == "C":
+  discount = .02
+
+elif origin == "fahrenheit" and destination == "celsius":
+  result = (quantity - 32) * 5/9
+
+else:
+  print("Invalid answer, make sure you write it the same way as the ones in the options")
+
+print(quantity, origin, "is", result, destination)
+print("Invalid category")
+
+if units > 10:
+  discount = discount + 0.05
+  print("The additional discount would be a 5% since you bought more than 10 units")
+
+print("The price per product before the discount is",ogprice)
+print("The discount applied would be:",discount)
+
+price = ogprice - (ogprice * discount)
+print("The price per product with discount included is:",price)
+
+
+distance = float(input("Enter the distance in miles: "))
+mpg = float(input("Enter the car's miles per gallon (MPG): "))
+gas_price = float(input("Enter the current price of gasoline per gallon: "))
+days = int(input("Enter the number of days you plan to travel: "))
+
+total_miles = distance * days
+
+total_gallons = total_miles / mpg
+
+total_cost = total_gallons * gas_price
+
+print("Total cost of the trip: $" + str(round(total_cost, 2)))
+
+("Enter the quantity:")
+quantity = int(input())
+print("Enter the unit of origin (miles, liters or fahrenheit):")
+origin = input()
+print("Enter the unit of destination (kilometers, gallons or celsius):")
+destination = input()
+
+if origin == "miles" and destination == "kilometers":
+  result = quantity * 1.609344
+
+elif origin == "liters" and destination == "gallons":
+  result = quantity * 0.264172
+
+elif origin == "fahrenheit" and destination == "celsius":
+  result = (quantity - 32) * 5/9
+
+else:
+  print("Invalid answer, make sure you write it the same way as the ones in the options")
+
+print(quantity, origin, "is", result, destination)
+
